@@ -1,0 +1,14 @@
+running 4 tests
+test rejection_brick::control_same_deposit_without_rejection_is_fetched ... CONTROL OK: fetch dispatched, FinaliseFetch broadcast recorded
+ok
+test rejection_brick::f1_ccm_gas_budget_bricks_on_demand_at_normal_gas ... F1: $20 deposit at 1 gwei bricked on demand via gas_budget; state=Pending
+ok
+test rejection_brick::f1_fee_drain_is_fee_sized_and_egress_without_fetch_is_the_scalable_loss ... F1 fee-drain per brick (unbacked gas asset): 19999998 (~fee-sized, not scalable)
+F1 scalable loss: 100,000 USDC egressed from Vault, never fetched; channel bricked
+ok
+test rejection_brick::failed_rejection_refund_permanently_bricks_deposit_channel ... dust deposit 425425 rejected -> BelowDustLimit; channel state = Pending
+credited 1000000000000 on State Chain; fetch still pending after 200 blocks: channel bricked
+ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 75 filtered out; finished in 1.33s
+
